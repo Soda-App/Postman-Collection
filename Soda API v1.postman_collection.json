@@ -1,0 +1,314 @@
+{
+	"info": {
+		"_postman_id": "01d80d0e-ca13-40db-b6b0-9606ece8bad3",
+		"name": "Soda API v1",
+		"description": "This is a **Postman** Collection for the **Soda** API **v1** endpoints.\n\nStartFragment\n\nRefer to the main [Soda API documentation](https://sodaapp.net/developers) for more details.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24401599"
+	},
+	"item": [
+		{
+			"name": "Posts",
+			"item": [
+				{
+					"name": "All Posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/posts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"posts"
+							]
+						},
+						"description": "Fetch all of the posts from your feed."
+					},
+					"response": [
+						{
+							"name": "All Posts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/posts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"posts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n  \"posts\": [\r\n    {\r\n      \"snowflake\": 29013148681897064,\r\n      \"author\": {\r\n        \"snowflake\": 28986549370618880,\r\n        \"username\": \"Rainnny7\",\r\n        \"displayName\": \"Braydon\",\r\n        \"media\": {\r\n          \"avatar\": \"https://cdn.sodaapp.net/1,72d5a67ff9\"\r\n        },\r\n        \"flags\": 9,\r\n        \"bio\": \"Self-taught Java Software Engineer\",\r\n        \"location\": \"Canada\"\r\n      },\r\n      \"content\": \"\",\r\n      \"attachments\": [\r\n        \"https://cdn.sodaapp.net/4/64b4116883/mycoollookingfile.jpg\"\r\n      ],\r\n      \"createdAt\": \"2022-11-11T21:27:29.076Z\"\r\n    }\r\n  ],\r\n  \"postCount\": 1,\r\n  \"totalPosts\": 1,\r\n  \"pages\": 1,\r\n  \"time\": \"1ms\"\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"Hello World!\",\r\n    \"attachments\": [\r\n        \"https://cdn.sodaapp.net/4/64b4116883/mycoollookingfile.jpg\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/posts/create",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"posts",
+								"create"
+							]
+						},
+						"description": "Fetch all of the posts from your feed."
+					},
+					"response": [
+						{
+							"name": "Create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"content\": \"Hello World!\",\r\n    \"attachments\": [\r\n        \"https://cdn.sodaapp.net/4/64b4116883/mycoollookingfile.jpg\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/posts/create",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"posts",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"post\": {\r\n        \r\n    },\r\n    \"time\": \"1ms\"\r\n}"
+						}
+					]
+				}
+			],
+			"description": "Post related endpoints."
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Lookup by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null,
+									"description": "The ID of the user to get"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Lookup by ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/users/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "28986549370618880",
+											"description": "The ID of the user to get"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"user\": {\r\n        \"snowflake\": 28986549370618880,\r\n        \"username\": \"Rainnny7\",\r\n        \"displayName\": \"Braydon\",\r\n        \"media\": {\r\n            \"avatar\": \"https://cdn.sodaapp.net/1,72d5a67ff9\"\r\n        },\r\n        \"flags\": 9,\r\n        \"bio\": \"Self-taught Java Software Engineer\",\r\n        \"location\": \"Canada\"\r\n    },\r\n    \"time\": \"1ms\"\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Lookup Multiple by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/:ids",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								":ids"
+							],
+							"variable": [
+								{
+									"key": "ids",
+									"value": null,
+									"description": "The ID of the user(s) to get (Separated by commas)"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Lookup by ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/users/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "28986549370618880,28988385058096130",
+											"description": "The ID of the user(s) to get (Separated by commas)"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"users\": [\r\n        {\r\n            \"snowflake\": 28986549370618880,\r\n            \"username\": \"Rainnny7\",\r\n            \"displayName\": \"Braydon\",\r\n            \"media\": {\r\n                \"avatar\": \"https://cdn.sodaapp.net/1,72d5a67ff9\"\r\n            },\r\n            \"flags\": 9,\r\n            \"bio\": \"Self-taught Java Software Engineer\",\r\n            \"location\": \"Canada\"\r\n        }\r\n    ],\r\n    \"userCount\": 1,\r\n    \"time\": \"1ms\"\r\n}"
+						}
+					]
+				}
+			],
+			"description": "User related endpoints."
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{bearerToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.request.headers.upsert({key:\"User-Agent\",value:pm.variables.get(\"userAgent\")})"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://sodaapp.net/api/v1"
+		},
+		{
+			"key": "userAgent",
+			"value": "Soda Postman Collection",
+			"type": "string"
+		},
+		{
+			"key": "bearerToken",
+			"value": "<Bearer Token>"
+		}
+	]
+}
