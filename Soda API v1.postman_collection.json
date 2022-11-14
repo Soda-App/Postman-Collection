@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "01d80d0e-ca13-40db-b6b0-9606ece8bad3",
 		"name": "Soda API v1",
-		"description": "This is a **Postman** Collection for the **Soda** API **v1** endpoints.\n\nStartFragment\n\nRefer to the main [Soda API documentation](https://sodaapp.net/developers) for more details.",
+		"description": "This is a **Postman** collection for the **Soda** API **v1** endpoints.\n\nRefer to the main [Soda API documentation](https://sodaapp.net/developers) for more details.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "24401599"
 	},
@@ -55,7 +55,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\r\n  \"posts\": [\r\n    {\r\n      \"snowflake\": 29013148681897064,\r\n      \"author\": {\r\n        \"snowflake\": 28986549370618880,\r\n        \"username\": \"Rainnny7\",\r\n        \"displayName\": \"Braydon\",\r\n        \"media\": {\r\n          \"avatar\": \"https://cdn.sodaapp.net/1,72d5a67ff9\"\r\n        },\r\n        \"flags\": 9,\r\n        \"bio\": \"Self-taught Java Software Engineer\",\r\n        \"location\": \"Canada\"\r\n      },\r\n      \"content\": \"\",\r\n      \"attachments\": [\r\n        \"https://cdn.sodaapp.net/4/64b4116883/mycoollookingfile.jpg\"\r\n      ],\r\n      \"createdAt\": \"2022-11-11T21:27:29.076Z\"\r\n    }\r\n  ],\r\n  \"postCount\": 1,\r\n  \"totalPosts\": 1,\r\n  \"pages\": 1,\r\n  \"time\": \"1ms\"\r\n}"
+							"body": "{\r\n    \"posts\": [\r\n        {\r\n            \"snowflake\": 30678927840117760,\r\n            \"author\": {\r\n                \"snowflake\": 30652427891901440,\r\n                \"username\": \"Rainnny7\",\r\n                \"displayName\": \"Braydon\",\r\n                \"media\": {\r\n                    \"avatar\": \"https://cdn.sodaapp.net/5,73e4a1676c\"\r\n                },\r\n                \"bio\": \"Self-taught Java Software Engineer\",\r\n                \"location\": \"Canada\"\r\n            },\r\n            \"content\": \"Hello Worddddld!\",\r\n            \"attachments\": [\r\n                \"https://cdn.sodaapp.net/4/64b4116883/mycoollookingfile.jpg\"\r\n            ],\r\n            \"createdAt\": \"2022-11-14T04:37:05.427Z\"\r\n        }\r\n    ],\r\n    \"postCount\": 1,\r\n    \"totalPosts\": 1,\r\n    \"pages\": 0,\r\n    \"time\": \"1ms\"\r\n}"
 						}
 					]
 				},
@@ -64,23 +64,21 @@
 					"request": {
 						"method": "POST",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"content\": \"Hello World!\",\r\n    \"attachments\": [\r\n        \"https://cdn.sodaapp.net/4/64b4116883/mycoollookingfile.jpg\"\r\n    ]\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
-							"raw": "{{baseUrl}}/posts/create",
+							"raw": "{{baseUrl}}/posts/create?content=Hello World",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"posts",
 								"create"
+							],
+							"query": [
+								{
+									"key": "content",
+									"value": "Hello World",
+									"description": "The content of the post."
+								}
 							]
 						},
 						"description": "Fetch all of the posts from your feed."
@@ -92,8 +90,19 @@
 								"method": "POST",
 								"header": [],
 								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"content\": \"Hello World!\",\r\n    \"attachments\": [\r\n        \"https://cdn.sodaapp.net/4/64b4116883/mycoollookingfile.jpg\"\r\n    ]\r\n}",
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "",
+											"type": "file",
+											"src": "/P:/Pictures/Profile Pictures/29e434376fc1cd04363a76336ef603fd.jpg"
+										},
+										{
+											"key": "",
+											"type": "file",
+											"src": "/P:/Pictures/Profile Pictures/6DHZfqdS.png"
+										}
+									],
 									"options": {
 										"raw": {
 											"language": "json"
@@ -101,13 +110,20 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/posts/create",
+									"raw": "{{baseUrl}}/posts/create?content=Hello World",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"posts",
 										"create"
+									],
+									"query": [
+										{
+											"key": "content",
+											"value": "Hello World",
+											"description": "The content of the post."
+										}
 									]
 								}
 							},
@@ -124,7 +140,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\r\n    \"post\": {\r\n        \r\n    },\r\n    \"time\": \"1ms\"\r\n}"
+							"body": "{\r\n    \"snowflake\": 30680682485253120,\r\n    \"attachments\": [\r\n        \"https://cdn.sodaapp.net/4,7ce780e8a3\",\r\n        \"https://cdn.sodaapp.net/4,7be9cfaf2b\"\r\n    ],\r\n    \"time\": \"1ms\"\r\n}"
 						}
 					]
 				}
